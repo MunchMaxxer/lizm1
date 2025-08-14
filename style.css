@@ -1,0 +1,6 @@
+body { font-family: sans-serif; background: linear-gradient(to right, #ffdde1, #ee9ca7); margin: 0; padding: 20px; }
+.lizard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 20px 0; }
+.lizard-card { background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); padding: 10px; text-align: center; transition: transform 0.3s; }
+.lizard-card:hover { transform: scale(1.05); }
+button { background: #ee9ca7; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background 0.3s; }
+button:hover { background: #ffdde1; }
