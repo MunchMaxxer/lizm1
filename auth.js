@@ -9,8 +9,7 @@ document.getElementById('loginForm')?.addEventListener('submit', async e => {
     const { data: session, error } = await supabase.auth.signInWithPassword({ email, password });
 
     if(error) alert(error.message);
-    else if(session?.user?.email === 'fileppcat@gmail.com') window.location.href = 'admin.html';
-    else window.location.href = 'shop.html';
+    else redirectAfterLogin(session.user.email);
 });
 
 // Email signup
@@ -22,10 +21,10 @@ document.getElementById('signupForm')?.addEventListener('submit', async e => {
     const { data: session, error } = await supabase.auth.signUp({ email, password });
 
     if(error) alert(error.message);
-    else window.location.href = 'shop.html';
+    else redirectAfterLogin(session.user.email);
 });
 
-// Google OAuth login
+// Google OAuth login/signup
 const googleButtons = document.querySelectorAll('#googleLoginBtn');
 googleButtons.forEach(btn => {
     btn.addEventListener('click', async () => {
@@ -39,11 +38,13 @@ googleButtons.forEach(btn => {
     });
 });
 
-// Supabase automatically handles OAuth redirect
+// Helper function to redirect based on user
+function redirectAfterLogin(email){
+    if(email === 'fileppcat@gmail.com') window.location.href = 'admin.html';
+    else window.location.href = 'shop.html';
+}
+
+// Handle OAuth redirect automatically
 supabase.auth.onAuthStateChange((event, session) => {
-    if(session?.user?.email === 'fileppcat@gmail.com') {
-        window.location.href = 'admin.html';
-    } else if(session?.user) {
-        window.location.href = 'shop.html';
-    }
+    if(session?.user) redirectAfterLogin(session.user.email);
 });
