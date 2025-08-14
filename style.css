@@ -1,6 +1,115 @@
-body { font-family: sans-serif; background: linear-gradient(to right, #ffdde1, #ee9ca7); margin: 0; padding: 20px; }
-.lizard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 20px 0; }
-.lizard-card { background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); padding: 10px; text-align: center; transition: transform 0.3s; }
-.lizard-card:hover { transform: scale(1.05); }
-button { background: #ee9ca7; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; transition: background 0.3s; }
-button:hover { background: #ffdde1; }
+/* General page styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ffdde1, #ee9ca7);
+    color: #333;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: 50px auto;
+    background: rgba(255,255,255,0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+button {
+    background: #ee9ca7;
+    border: none;
+    color: white;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: #ff3c8d;
+    transform: translateY(-2px);
+}
+
+.google-btn {
+    background: #4285F4;
+    margin-top: 10px;
+}
+
+.google-btn:hover {
+    background: #357ae8;
+}
+
+/* Links */
+a {
+    color: #ee9ca7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #ff3c8d;
+}
+
+/* Lizard grid for shop page */
+.lizard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.lizard-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.lizard-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+}
+
+.btn {
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+    background: #ee9ca7;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: #ff3c8d;
+    transform: scale(1.05);
+}
